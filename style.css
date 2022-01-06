@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9ea1a3;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+  font-size: 25px;
+  text-align: right;
+}
+
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+li {
+  font-size: 25px;
+}
+
+#main_container {
+  width: 150px;
+  background-color: #f0ffff;
+  margin: 0px;
+  padding: 10px;
+  border: 1px solid #30261b;
+}
+
+#input_field {
+  width: 100%;
+}
+
+#input_field:focus {
+  outline: none;
+}
+
+#correct_flag {
+  width: 150px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 3px;
+}
