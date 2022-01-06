@@ -31,6 +31,7 @@ function submit() {
     correct_flag.style.backgroundColor = '#fc7e7e';
   }
   correct_flag.innerText = total;
+  input_field.innerText = '';
   init();
 }
 
