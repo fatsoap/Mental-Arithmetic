@@ -11,7 +11,7 @@ input_field.addEventListener('keyup', function (e) {
   if (e.keyCode === 13) {
     submit();
   } else if (e.keyCode === 32) {
-    pause = true;
+    pause = !pause;
   }
 });
 
@@ -48,5 +48,7 @@ init();
 input_field.focus();
 pause = false;
 setInterval(() => {
-  timer.innerText = Number(timer.innerText) + 1;
+  if (!pause) {
+    timer.innerText = Number(timer.innerText) + 1;
+  }
 }, 1000);
