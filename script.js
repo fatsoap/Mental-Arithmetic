@@ -42,7 +42,7 @@ function submit() {
   }
   total_amount.innerText = Number(total_amount.innerText) + 1;
   correct_flag.innerText = total;
-  input_field.innerText = '';
+  input_field.value = '';
   init();
 }
 
