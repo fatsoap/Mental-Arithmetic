@@ -14,6 +14,8 @@ input_field.addEventListener('keyup', function (e) {
   } else if (e.keyCode === 32) {
     //space
     pause = !pause;
+    question_field.style.backgroundColor = pause ? '#000000' : 'transparent ';
+    input_field.value = '';
   }
 });
 
