@@ -16,6 +16,13 @@ input_field.addEventListener('keyup', function (e) {
     pause = !pause;
     question_field.style.backgroundColor = pause ? '#000000' : 'transparent ';
     input_field.value = '';
+  } else if (e.keyCode == 82) {
+    // restart
+    timer.innerText = '0';
+    correct_amount.innerText = '0';
+    total_amount.innerText = '0';
+    input_field.value = '';
+    init();
   }
 });
 
