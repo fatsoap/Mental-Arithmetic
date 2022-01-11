@@ -9,8 +9,10 @@ input_field.addEventListener('keyup', function (e) {
   e.preventDefault();
   console.log(e.keyCode);
   if (e.keyCode === 13) {
+    // enter
     submit();
   } else if (e.keyCode === 32) {
+    //space
     pause = !pause;
   }
 });
