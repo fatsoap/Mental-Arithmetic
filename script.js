@@ -1,8 +1,8 @@
 let input_field = document.getElementById('input_field');
 let question_field = document.getElementById('question_field');
-let timer = document.getElementById('timer');
-let correct_amount = document.getElementById('correct_amount');
-let total_amount = document.getElementById('total_amount');
+let timer = 0;
+let correct_amount = 0;
+let total_amount = 0;
 let pause = true;
 
 input_field.addEventListener('keyup', function (e) {
@@ -18,9 +18,9 @@ input_field.addEventListener('keyup', function (e) {
     input_field.value = '';
   } else if (e.keyCode == 82) {
     // restart
-    timer.innerText = '0';
-    correct_amount.innerText = '0';
-    total_amount.innerText = '0';
+    timer = 0;
+    correct_amount = 0;
+    total_amount = 0;
     input_field.value = '';
     init();
   }
@@ -33,6 +33,8 @@ function init() {
     li.innerText = Math.floor(Math.random() * 200 - 100);
     question_field.appendChild(li);
   }
+  document.getElementById('score_board').innerText =
+    '答對題數: ' + correct_amount + ' / ' + total_amount;
 }
 
 function submit() {
@@ -45,11 +47,11 @@ function submit() {
   let correct_flag = document.getElementById('correct_flag');
   if (total === ans) {
     correct_flag.style.backgroundColor = '#81ff81';
-    correct_amount.innerText = Number(correct_amount.innerText) + 1;
+    correct_amount += 1;
   } else {
     correct_flag.style.backgroundColor = '#fc7e7e';
   }
-  total_amount.innerText = Number(total_amount.innerText) + 1;
+  total_amount += 1;
   correct_flag.innerText = total;
   input_field.value = '';
   init();
@@ -60,6 +62,7 @@ input_field.focus();
 pause = false;
 setInterval(() => {
   if (!pause) {
-    timer.innerText = Number(timer.innerText) + 1;
+    timer += 1;
+    document.getElementById('timer').innerText = timer;
   }
 }, 1000);
