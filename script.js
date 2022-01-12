@@ -33,8 +33,10 @@ function init() {
     li.innerText = Math.floor(Math.random() * 200 - 100);
     question_field.appendChild(li);
   }
-  document.getElementById('score_board').innerText =
-    '答對題數: ' + correct_amount + ' / ' + total_amount;
+  document.getElementById('score_board').innerText = `速度 ${
+    correct_amount / (timer + 0.0001) / 10
+  } (答對題數/10sec)
+  答對題數: ${correct_amount} / ${total_amount}`;
 }
 
 function submit() {
