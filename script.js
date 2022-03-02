@@ -13,6 +13,10 @@ function init() {
     question_field.appendChild(li);
   }
   input_field.value = '';
+  document.getElementById('score_board').innerText = `速度 ${
+    correct_amount / (timer + 0.0001) / 10
+  } (答對題數/10sec)
+  答對題數: ${correct_amount} / ${total_amount}`;
 }
 
 function submit() {
