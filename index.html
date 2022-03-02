@@ -9,28 +9,37 @@
     <title>Mental Arithmetic</title>
   </head>
   <body>
-    <div id="container">
+    <div id="real-container">
       <header><h1>心算練習器</h1></header>
-      <main id="main_container">
-        <ul id="question_field">
-          <li></li>
-        </ul>
-        <input id="input_field" type="number" />
-      </main>
-      <footer><p id="correct_flag" /></footer>
+      <div id="outer-container">
+        <div id="container">
+          <main id="main_container">
+            <div id="pause_cover"><p>暫停</p></div>
+            <ul id="question_field">
+              <li></li>
+            </ul>
+            <input id="input_field" type="number" />
+          </main>
+          <footer><p id="correct_flag" /></footer>
+        </div>
+        <div id="score_board">
+          <header class="score_info">
+            <p id="timer">0</p>
+            sec
+          </header>
+          <main class="score_info">
+            答對題數:
+            <p id="correct_amount">0</p>
+            /
+            <p id="total_amount">0</p>
+          </main>
+          <footer id="key_hint">
+            答題 (Enter)<br />
+            暫停 (Space)<br />
+            重來 (R)
+          </footer>
+        </div>
+      </div>
     </div>
-    <div id="score_board">
-      <header class="score_info">
-        <p id="timer">0</p>
-        sec
-      </header>
-      <main class="score_info">
-        答對題數:
-        <p id="correct_amount">0</p>
-        /
-        <p id="total_amount">0</p>
-      </main>
-    </div>
-    <script src="script.js" />
   </body>
 </html>
